@@ -13,7 +13,7 @@ export function FavoriteButton({id}: FavoriteButtonProps) {
 
   const handleFavorite = async () => {
     try {
-     const response = await api.post('/products',{
+     const response = await api.post('/api/products',{
         id:id
       });
 
