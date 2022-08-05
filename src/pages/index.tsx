@@ -1,8 +1,22 @@
+import { GetServerSideProps } from "next";
 import { Container, Content } from "../../shared/pages/home.styles";
 import { Card } from "../components/Card";
-import { products } from "../utils/Products";
+import { api } from "../services/api";
 
-export default function Home() {
+interface HomeProps {
+  products: [
+    {
+      id: number;
+      title: string;
+      price: number;
+      oldPrice: number;
+      imageUrl: string;
+      favorite: boolean;
+    }
+  ];
+}
+
+export default function Home({ products }: HomeProps) {
   return (
     <Container>
       <Content>
@@ -13,3 +27,13 @@ export default function Home() {
     </Container>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const products = await api.get("products");
+
+  return {
+    props: {
+      products: products.data,
+    },
+  };
+};
