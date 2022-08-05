@@ -1,5 +1,7 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { products } from "../../utils/Products";
+import { favorites } from "../../utils/Favorites";
+
 
 export default async (req: VercelRequest, res: VercelResponse) => {
   try {
@@ -8,6 +10,27 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     res.status(200).json(products);
 
     }
+
+      
+    if(req.method === "POST") {
+      const { id } = req.body;
+
+    
+      const product = products.find(product => product.id === id);
+
+      if (product) {
+        product.favorite = true;
+
+        favorites.push(product);
+
+
+
+       res.status(200).json(product);
+      } 
+
+      
+      res.status(200).json(product);
+      }     
 
     try {
       if (req.method === "DELETE") {
