@@ -1,4 +1,6 @@
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
+import { Button } from "../components/Button";
+import { Card } from "../components/Card";
 import { api } from "../services/api";
 
 interface HomeProps {
@@ -6,7 +8,7 @@ interface HomeProps {
     {
       id: string;
       title: string;
-      price: string;
+      price: number;
       oldPrice: string;
       imageUrl: string;
       favorite: boolean;
@@ -15,26 +17,21 @@ interface HomeProps {
 }
 export default function Home({ products }: HomeProps) {
   return (
-    <div>
-      <h1>Home</h1>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
 
+        marginTop: "100px",
+        marginLeft: "100px",
+      }}
+    >
       <ul>
         {products.map((product) => (
-          <li key={product.id}>
-            <h2>{product.title}</h2>
-            <p>{product.price}</p>
-            <p
-              style={{
-                textDecoration: "line-through",
-              }}
-            >
-              {product.oldPrice}
-            </p>
-            <img src={product.imageUrl} alt={product.title} />
-            <p>{product.favorite}</p>
-          </li>
+          <Card key={product.id} product={product} />
         ))}
       </ul>
+      <Button />
     </div>
   );
 }
