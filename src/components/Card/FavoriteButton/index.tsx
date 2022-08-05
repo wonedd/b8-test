@@ -32,15 +32,6 @@ export function FavoriteButton({product}: FavoriteButtonProps) {
     }
   };
 
-  const handleDelete = async () => {
-    try {
-      await api.delete(`products?id=${product.id}`);
-
-      setIsFavorite(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   return (
     <Container onClick={handleFavorite}>

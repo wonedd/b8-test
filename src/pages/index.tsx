@@ -6,7 +6,7 @@ import { api } from "../services/api";
 interface HomeProps {
   products: [
     {
-      id: number;
+      id: string;
       title: string;
       price: number;
       oldPrice: number;
