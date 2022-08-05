@@ -7,7 +7,7 @@ interface CardProps {
     id: string;
     title: string;
     price: number;
-    oldPrice: string;
+    oldPrice: number;
     imageUrl: string;
     favorite: boolean;
   };
@@ -16,7 +16,7 @@ export function Card({ product }: CardProps) {
   return (
     <Container>
       <ImageBox>
-        <FavoriteButton id={product?.id} />
+        <FavoriteButton />
         <Image src={product.imageUrl} alt={product.title} />
       </ImageBox>
       <DescriptionBox>
