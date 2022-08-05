@@ -4,7 +4,7 @@ import { Container, DescriptionBox, Image, ImageBox } from "./styles";
 
 interface CardProps {
   product: {
-    id: string;
+    id: number;
     title: string;
     price: number;
     oldPrice: number;
@@ -16,7 +16,7 @@ export function Card({ product }: CardProps) {
   return (
     <Container>
       <ImageBox>
-        <FavoriteButton />
+        <FavoriteButton id={product.id}/>
         <Image src={product.imageUrl} alt={product.title} />
       </ImageBox>
       <DescriptionBox>

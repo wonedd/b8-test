@@ -1,8 +1,7 @@
-import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    id: uuid(),
+    id:1,
     title:
       "Monitor LED 27'' Gamer Curvo Samsung  1920 x 1080 FHD 240 Hz HDMI, DP, Gsync Série CRG50",
     price: 2599,
@@ -11,7 +10,7 @@ export const products = [
     favorite: false,
   },
   {
-    id: uuid(),
+    id: 2,
     title:
       "ACER Notebook Aspire 5 A515-56-32PG, Intel Core I3 11ª geração, 4GB, 256GB SDD, Windows11, Prata",
     price: 2924.73,
