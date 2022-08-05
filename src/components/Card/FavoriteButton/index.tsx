@@ -5,15 +5,23 @@ import { Container } from "./styles";
 
 
 interface FavoriteButtonProps {
-  id: number;
+  product: {
+    id: string;
+    title: string;
+    price: number;
+    oldPrice: number;
+    imageUrl: string;
+    favorite: boolean;
+  };
 }
-export function FavoriteButton({id}: FavoriteButtonProps) {
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+export function FavoriteButton({product}: FavoriteButtonProps) {
+  const [isFavorite, setIsFavorite] = useState<boolean>(product.favorite);
 
 
   const handleFavorite = async () => {
     try {
-     const response = await api.post(`favorites?id=${id}`);
+
+     const response = await api.post(`favorites?id=${product.id}`);
 
       console.log(response)
 
@@ -26,7 +34,7 @@ export function FavoriteButton({id}: FavoriteButtonProps) {
 
   const handleDelete = async () => {
     try {
-      await api.delete(`products?id=${id}`);
+      await api.delete(`products?id=${product.id}`);
 
       setIsFavorite(false);
     } catch (err) {
@@ -35,11 +43,11 @@ export function FavoriteButton({id}: FavoriteButtonProps) {
   };
 
   return (
-    <Container>
+    <Container onClick={handleFavorite}>
       {isFavorite ? (
-        <IoHeart onClick={handleFavorite} color="red" />
+        <IoHeart  color="red" />
       ) : (
-        <IoHeartOutline onClick={handleFavorite}  color="red" />
+        <IoHeartOutline  color="red" />
       )}  
     </Container>
   );
