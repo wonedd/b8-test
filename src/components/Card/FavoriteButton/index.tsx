@@ -17,20 +17,20 @@ export function FavoriteButton(id: { id: string }) {
     }
   };
 
-  const handleDelete = async () => {
-    try {
-      await api.delete("products", id);
+  // const handleDelete = async () => {
+  //   try {
+  //     await api.delete("products", id);
 
-      setIsFavorite(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //     setIsFavorite(false);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <Container>
       {isFavorite ? (
-        <IoHeart onClick={handleDelete} color="red" />
+        <IoHeart color="red" />
       ) : (
         <IoHeartOutline onClick={handleFavorite} color="red" />
       )}

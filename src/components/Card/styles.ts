@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-  width: 304px;
-  height: 568px;
+  max-width: 304px;
+  min-height: 568px;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+
   gap: 32px;
 
   padding: 32px;

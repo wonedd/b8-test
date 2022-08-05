@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import { Button } from "../components/Button";
+import { Container, Content } from "../../shared/pages/home.styles";
 import { Card } from "../components/Card";
 import { api } from "../services/api";
 
@@ -17,22 +17,13 @@ interface HomeProps {
 }
 export default function Home({ products }: HomeProps) {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-
-        marginTop: "100px",
-        marginLeft: "100px",
-      }}
-    >
-      <ul>
+    <Container>
+      <Content>
         {products.map((product) => (
           <Card key={product.id} product={product} />
         ))}
-      </ul>
-      <Button />
-    </div>
+      </Content>
+    </Container>
   );
 }
 
