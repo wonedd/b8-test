@@ -13,7 +13,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
 
       
     if(req.method === "POST") {
-      const { id } = req.body;
+      const { id } = await req.body;
 
     
       const product = products.find(product => product.id === id);
