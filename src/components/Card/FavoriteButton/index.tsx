@@ -17,7 +17,7 @@ export function FavoriteButton({id}: FavoriteButtonProps) {
 
       console.log(response)
 
-      setIsFavorite(true);
+      setIsFavorite(!isFavorite);
 
     } catch (err) {
       console.log(err);
@@ -37,9 +37,9 @@ export function FavoriteButton({id}: FavoriteButtonProps) {
   return (
     <Container>
       {isFavorite ? (
-        <IoHeart onClick={handleDelete} color="red" />
+        <IoHeart onClick={handleFavorite} color="red" />
       ) : (
-        <IoHeartOutline onClick={handleFavorite} color="red" />
+        <IoHeartOutline onClick={handleFavorite}  color="red" />
       )}  
     </Container>
   );
