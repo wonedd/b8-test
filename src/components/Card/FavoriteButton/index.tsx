@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IoHeart, IoHeartOutline } from "react-icons/io5";
+import { IoHeart, IoHeartOutline, IoManOutline } from "react-icons/io5";
 import { api } from "../../../services/api";
 import { Container } from "./styles";
 
@@ -13,9 +13,7 @@ export function FavoriteButton({id}: FavoriteButtonProps) {
 
   const handleFavorite = async () => {
     try {
-     const response = await api.post('api/products',{
-        id:id
-      });
+     const response = await api.post(`favorites?id=${id}`);
 
       console.log(response)
 
