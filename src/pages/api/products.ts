@@ -1,9 +1,10 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import { products } from "../../utils/Products";
 import { favorites } from "../../utils/Favorites";
+import { NextApiRequest, NextApiResponse } from "next";
 
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
 
     if(req.method === "GET") {
