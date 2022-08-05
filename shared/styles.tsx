@@ -38,9 +38,6 @@ export const globalStyles = (
         font-size: 14px;
         font-family: "Inter", sans-serif;
       }
-      button {
-        cursor: pointer;
-      }
       body::-webkit-scrollbar {
         width: 4px;
       }
