@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { VercelRequest, VercelResponse } from "@vercel/node";
 import { products } from "../../utils/Products";
 import { favorites } from "../../utils/Favorites";
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   try {
     res.status(200).json(products);
 
