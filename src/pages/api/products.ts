@@ -22,7 +22,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
         }
       }
     } catch (err) {
-      res.status(404).json({ message: "Product not found" });
+      res.status(404).json({ message: "Products not found" });
     }
   } catch (err) {
     res.status(404).json({ message: "Product not found" });
