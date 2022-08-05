@@ -29,7 +29,7 @@ export default function Home({ products }: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const products = await api.get("products");
+  const products = await api.get("api/products");
 
   return {
     props: {
