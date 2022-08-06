@@ -31,7 +31,8 @@ export function Card({ product }: CardProps) {
           <h4>{format(product.oldPrice)}</h4>
           <h3>{format(product.price)}</h3>
           <p>
-            em até <strong>10x de{format(product.price / 10)}</strong> sem juros
+            em até <strong>10x de {format(product.price / 10)}</strong> sem
+            juros
           </p>
         </div>
       </DescriptionBox>
