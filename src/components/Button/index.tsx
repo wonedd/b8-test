@@ -11,8 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({ favorite, id, ...rest }: ButtonProps) {
   const [isFavorite, setIsFavorite] = useState<boolean>(favorite);
   const [isHovering, setIsHovering] = useState<boolean>(false);
-  const [isFavoriteHovering, setIsFavoriteHovering] =
-    useState<boolean>(isFavorite);
+
   const handleFavorite = async () => {
     try {
       await api.post(`favorites?id=${id}`);
