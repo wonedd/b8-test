@@ -10,7 +10,7 @@ export const Container = styled.button<ContainerProps>`
   cursor: pointer;
 
   max-width: 240px;
-  height: 48px;
+  max-height: 48px;
 
   padding: 12px 24px;
 

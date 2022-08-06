@@ -55,9 +55,9 @@ export const globalStyles = (
 
         --pink100: #ffcae0;
 
-        --red500: #f3151b;
+        --red500: #da4b4f;
 
-        --red600: #e20f15;
+        --red600: #c22539;
 
         --gray200: #e9ebee;
 
